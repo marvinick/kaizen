@@ -12,6 +12,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'font-awesome-rails'
 gem 'simple_form'
+gem 'devise'
+gem 'arel', '6.0.0.beta2'
 
 group :development, :test do
   gem 'byebug'
