@@ -18,6 +18,9 @@
   <div class="form-actions">
     <%= f.button :submit, "Update" %>
   </div>
+  <br>
+  <%= gravatar_tag current_user.email, size: 100 %>
+  <%= link_to "Change Avatar", "http://en.gravatar.com" %>
 <% end %>
 
 <h3>Cancel my account</h3>

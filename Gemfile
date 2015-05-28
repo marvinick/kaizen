@@ -14,6 +14,7 @@ gem 'font-awesome-rails'
 gem 'simple_form'
 gem 'devise'
 gem 'arel', '6.0.0.beta2'
+gem 'gravatarify', '~> 3.0.0'
 
 group :development, :test do
   gem 'byebug'
