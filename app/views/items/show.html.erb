@@ -20,5 +20,27 @@
   <%= @item.gluten %>
 </p>
 
-<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= @item.latitude %>
+<%= @item.longitude %>
+<div id="map-canvas" style="width: 230px; height: 230px;"></div>
+
+<%= link_to 'Edit', edit_item_path(@item) %>
 <%= link_to 'Back', items_path %>
+
+
+<script type="text/javascript">
+  function initialize() {
+    var myCenter = { lat: <%= @item.latitude %>, lng: <%= @item.longitude %> }
+    var mapOptions = {
+      center: myCenter,
+      zoom: 8
+    };
+    var map = new google.maps.Map(document.getElementById('map-canvas'),
+        mapOptions);
+    var marker = new google.maps.Marker ({
+      position: myCenter,
+      map: map
+    });
+  }
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>

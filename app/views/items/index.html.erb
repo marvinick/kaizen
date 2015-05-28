@@ -7,6 +7,7 @@
       <th>Description</th>
       <th>User</th>
       <th>Gluten</th>
+      <th>Address</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= item.description %></td>
         <td><%= item.user_id %></td>
         <td><%= item.gluten %></td>
+        <td><%= item.address %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
         <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
