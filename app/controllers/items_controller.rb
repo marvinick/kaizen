@@ -10,7 +10,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-    respond_with(@item)
+    @comments = @item.comments
+    @comment = Comment.new
   end
 
   def new
