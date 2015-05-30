@@ -28,4 +28,13 @@
     });
   }
   google.maps.event.addDomListener(window, 'load', initialize);
+
+  <% @comments.each do |comment| %>
+    $(".score_<%= comment.id %>").raty({
+    starOn: "<%= image_path('star-on.png')%>",
+    starOff: "<%= image_path('star-off.png') %>",
+    score: <%= comment.score %>,
+    readOnly: true
+  });
+  <% end %>
 </script>
