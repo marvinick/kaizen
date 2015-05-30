@@ -1,6 +1,7 @@
 <div class="row">
   <div class="col-md-4">
     <h4><%= @item.name %></h3>
+    <div class="average"></div>
     <h5><%= @item.gluten %></h4>
     <div id="map-canvas" style="width: 300px; height: 300px;"></div>
   </div>
@@ -37,4 +38,11 @@
     readOnly: true
   });
   <% end %>
+
+  $(".average").raty({
+    starOn: "<%= image_path('star-on.png')%>",
+    starOff: "<%= image_path('star-off.png') %>",
+    score: <%= @item.total_average_rating %>,
+    readOnly: true
+  });
 </script>
