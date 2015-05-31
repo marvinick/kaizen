@@ -5,8 +5,7 @@ class ItemsController < ApplicationController
   respond_to :html
 
   def index
-    @items = Item.all
-    respond_with(@items)
+    @items = Item.search(params[:search])
   end
 
   def show
