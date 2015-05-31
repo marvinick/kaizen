@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-md-2">
+  <h3><%= @user.name %></h3>
+  <%= gravatar_tag @user.email, size: 150 %>
+  </div>
+  <div class="col-md-5">
+    <h3>Items</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Created</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @items.each do |item| %>
+        <tr>
+          <td><%= item.name %></td>
+          <td><%= time_ago_in_words(item.created_at) %> ago</td>
+          <td><%= link_to "Edit", edit_item_path(item) %> | <%= link_to "Delete", method: :delete %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <%= link_to "New Item", new_item_path %>
+  </div>
+
+  <div class="col-md-5">
+    <h3>Comments</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Created</th>
+          <th>Rating</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @comments.each do |comment| %>
+        <tr>
+          <td><%= comment.item.name %></td>
+          <td><%= time_ago_in_words(comment.created_at) %> ago</td>
+          <td><div class="score_<%= comment.id %>"></div></td>
+          <td><%= link_to "Edit", edit_comment_path(comment) %> | <%= link_to "Delete", method: :delete %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script type="text/javascript">
+  <% @comments.each do |comment| %>
+    $(".score_<%= comment.id %>").raty({
+    starOn: "<%= image_path('star-on.png')%>",
+    starOff: "<%= image_path('star-off.png') %>",
+    score: <%= comment.score %>,
+    readOnly: true
+  });
+  <% end %>
+</script>
