@@ -7,3 +7,30 @@
   z-index: 1;
   width: 200px;
 }
+
+.landing_title {
+  padding-top: 200px;
+}
+
+.landing {
+  background: image-url("landinpage.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+.btn-landing {
+  background: none;
+  border: solid;
+}
+
+.btn-landing:hover {
+  background: none;
+  border-color: white;
+}

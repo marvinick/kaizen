@@ -17,7 +17,11 @@
     <%= message %>
   </div>
 <% end %>
-<div class="container">
+<% if current_page?(root_path) %>
+  <div class="landing">
+<% else %>
+  <div class="container">
+  <% end %>
 <%= yield %>
 </div>
 </body>
