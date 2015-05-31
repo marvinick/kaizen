@@ -10,13 +10,12 @@
         <tr>
           <th>Name</th>
           <th>Created</th>
-          <th></th>
         </tr>
       </thead>
       <tbody>
         <% @items.each do |item| %>
         <tr>
-          <td><%= item.name %></td>
+          <td><%= link_to item.name, item %></td>
           <td><%= time_ago_in_words(item.created_at) %> ago</td>
           <td><%= link_to "Edit", edit_item_path(item) %> | <%= link_to "Delete", method: :delete %></td>
         </tr>
@@ -40,7 +39,7 @@
       <tbody>
         <% @comments.each do |comment| %>
         <tr>
-          <td><%= comment.item.name %></td>
+          <td><%= link_to comment.item.name, item_path(comment.item) %></td>
           <td><%= time_ago_in_words(comment.created_at) %> ago</td>
           <td><div class="score_<%= comment.id %>"></div></td>
           <td><%= link_to "Edit", edit_comment_path(comment) %> | <%= link_to "Delete", method: :delete %></td>
