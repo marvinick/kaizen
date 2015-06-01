@@ -16,6 +16,7 @@ gem 'devise'
 gem 'arel', '6.0.0.beta2'
 gem 'gravatarify', '~> 3.0.0'
 gem 'geocoder'
+gem "d3-rails"
 
 group :development, :test do
   gem 'byebug'
