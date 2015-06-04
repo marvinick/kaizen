@@ -1,14 +1,9 @@
-<%= simple_form_for(@item) do |f| %>
+<%= simple_form_for(@item, :html => {:class => 'form-signin' })  do |f| %>
   <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :name, required: true %>
-    <%= f.input :description %>
-    <%= f.input :address %>
-    <%= f.input :gluten %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <h2 class="text-center">New Item</h2>
+  <%= f.input :name, required: true, autofocus: true, label: false, placeholder: "name", input_html: {class: "form-control"} %>
+  <%= f.input :description, autofocus: true, label: false, placeholder: "description", input_html: {class: "form-control"} %>
+  <%= f.input :address, autofocus: true, label: false, placeholder: "location", input_html: {class: "form-control"} %>
+  <%= f.input :gluten %>
+  <%= f.button :submit, class: "btn btn-primary btn-block" %>
 <% end %>

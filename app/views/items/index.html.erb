@@ -23,7 +23,11 @@
     <% end %>
   </tbody>
 </table>
-
+<hr>
+<div class="col-md-4">
+  <%= pie_chart Item.group(:name).count  %>
+  <p>Know how many items you have.<p>
+</div>
 <br>
 <% if current_user %>
 <%= link_to 'New Item', new_item_path %>
