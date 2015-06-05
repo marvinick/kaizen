@@ -23,15 +23,18 @@
     <% end %>
   </tbody>
 </table>
+<% if current_user %>
+<strong><%= link_to 'Add Item', new_item_path %></strong>
+<% end %>
 <hr>
-<div class="col-md-4">
+<div class="col-md-6">
   <%= pie_chart Item.group(:name).count  %>
   <p>Know how many items you have.<p>
 </div>
-<br>
-<% if current_user %>
-<%= link_to 'New Item', new_item_path %>
-<% end %>
+<div class="col-md-6">
+  <%= pie_chart Comment .group(:score).count  %>
+  <p>Know how many items you have.<p>
+</div>
 
 <script type="text/javascript">
 <% @items.each do |item| %>
