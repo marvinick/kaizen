@@ -27,13 +27,17 @@
 <strong><%= link_to 'Add Item', new_item_path %></strong>
 <% end %>
 <hr>
-<div class="col-md-6">
+<div class="col-md-4">
   <%= pie_chart Item.group(:name).count  %>
   <p>Know how many items you have.<p>
 </div>
-<div class="col-md-6">
-  <%= pie_chart Comment .group(:score).count  %>
+<div class="col-md-4">
+  <%= pie_chart Comment.group(:score).count  %>
   <p>Know how many items you have.<p>
+</div>
+<div class="col-md-4">
+  <%= bar_chart Comment.group(:score, :item_id).count  %>
+  <p>Monitor the received comments<p>
 </div>
 
 <script type="text/javascript">
