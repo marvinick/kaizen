@@ -49,6 +49,13 @@
     </table>
   </div>
 </div>
+<div class="row">
+  <div class="col-md-12">
+    <h4>Monitor the received comments</h4>
+    <%= bar_chart Comment.group(:score, :item_id).count, stacked: true %>
+  </div>
+</div>
+
 
 <script type="text/javascript">
   <% @comments.each do |comment| %>
