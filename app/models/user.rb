@@ -5,5 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :items, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :tastes, dependent: :destroy
   validates_presence_of :name
 end

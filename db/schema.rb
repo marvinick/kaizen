@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150530035428) do
+ActiveRecord::Schema.define(version: 20150609034255) do
 
   create_table "comments", force: true do |t|
     t.integer  "item_id"
@@ -33,6 +33,15 @@ ActiveRecord::Schema.define(version: 20150530035428) do
     t.float    "longitude"
     t.string   "address"
     t.integer  "total_average_rating", default: 0
+  end
+
+  create_table "tastes", force: true do |t|
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "item_id"
+    t.integer  "user_id"
+    t.integer  "score",      default: 0
   end
 
   create_table "users", force: true do |t|

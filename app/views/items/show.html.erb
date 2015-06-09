@@ -1,18 +1,24 @@
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-3">
     <h4><%= @item.name %></h3>
     <div class="average"></div>
     <h5>Gluten: <%= @item.gluten %></h4>
-    <div id="map-canvas" style="width: 300px; height: 300px;"></div>
+    <div id="map-canvas" style="width: 100px; height: 100px;"></div>
   </div>
 
-  <div class="col-md-4">
+  <div class="col-md-3">
     <h4>Rate and Comment</h4>
     <%= render "comments/form" %>
     <h4>Comments</h4>
     <%= render @comments %>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-3">
+    <h4>Rate Flavor</h4>
+    <%= render "tastes/form" %>
+    <h4>Tastes</h4>
+    <%= render @tastes %>
+  </div>
+  <div class="col-md-3">
     <h4>Glance at the data</h4>
     <%= column_chart @comments.group(:score, :item_id).count, stacked: true  %>
   </div>

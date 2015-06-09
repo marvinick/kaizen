@@ -11,6 +11,8 @@ class ItemsController < ApplicationController
   def show
     @comments = @item.comments
     @comment = Comment.new
+    @tastes = @item.tastes
+    @taste = Taste.new
   end
 
   def new

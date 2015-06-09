@@ -24,9 +24,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-     @comment.destroy
+    @comment.destroy
     redirect_to item_path(@comment.item), notice: "Comment was deleted"
-
   end
 
   private

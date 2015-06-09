@@ -4,9 +4,16 @@ class Item < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode
   has_many :comments, dependent: :destroy
+  has_many :tastes, dependent: :destroy
 
   def average_rating
     comments.sum(:score) / comments.size
+  rescue ZeroDivisionError
+    0
+  end
+
+  def average_rating_taste
+    tastes.sum(:score) / tastes.size
   rescue ZeroDivisionError
     0
   end
