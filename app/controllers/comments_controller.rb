@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = current_user.comments.new(comment_params)
+    @comment = current_user.comments.new(params[:item_id])
     if @comment.save
       redirect_to item_path(@comment.item), notice: "Comment was created"
     else
@@ -35,6 +35,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:content, :item_id, :score)
+    params.require(:comment).permit(:content, :score)
   end
 end
