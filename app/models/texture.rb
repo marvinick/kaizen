@@ -1,6 +1,7 @@
 class Texture < ActiveRecord::Base
   belongs_to :user
   belongs_to :item
+  belongs_to :comment
   validates_presence_of :score
 
   after_save :calculate_average

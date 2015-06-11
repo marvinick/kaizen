@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @comments = @item.comments
+    @comments = @item.comments.limit(5)
     @comment = Comment.new
     @tastes = @item.tastes
     @taste = Taste.new
@@ -45,6 +45,6 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:name, :description, :gluten, :address)
+      params.require(:item).permit(:name, :description, :gluten, :address, :content)
     end
 end

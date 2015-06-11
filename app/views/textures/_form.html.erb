@@ -1,11 +1,11 @@
-<%= simple_form_for(@comment) do |f| %>
+<%= simple_form_for(@texture) do |f| %>
   <div class="form-inputs">
-    <%= f.input :content %>
+    <%= f.input :content, required: true %>
     <%= f.hidden_field :item_id, required: true, value: @item.id %>
     <%= f.hidden_field :score, required: true %>
     <div class="score"></div>
   </div>
-  <br/>
+  <hr>
   <div class="form-actions">
     <%= f.button :submit, class: "btn btn-primary" %>
   </div>
@@ -15,7 +15,7 @@
   $(".score").raty({
     starOn: "<%= image_path('star-on.png')%>",
     starOff: "<%= image_path('star-off.png') %>",
-    target: "#comment_score",
+    target: "#taste_score",
     targetKeep: true,
     targetType: "number"
   });
