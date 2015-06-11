@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+
 
   def index
     @items = Item.search(params[:search])
@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = current_user.items.new(item_params)
+    @item = current_user.items.new(params[:item_id])
     @item.save
     respond_with(@item)
   end

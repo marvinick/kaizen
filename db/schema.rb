@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150609034255) do
+ActiveRecord::Schema.define(version: 20150609211359) do
 
   create_table "comments", force: true do |t|
     t.integer  "item_id"
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 20150609034255) do
     t.integer  "item_id"
     t.integer  "user_id"
     t.integer  "score",      default: 0
+  end
+
+  create_table "textures", force: true do |t|
+    t.integer  "score",      default: 0
+    t.integer  "user_id"
+    t.integer  "item_id"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

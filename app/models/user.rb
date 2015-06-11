@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
   has_many :items, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :tastes, dependent: :destroy
+  has_many :textures, dependent: :destroy
   validates_presence_of :name
 end
