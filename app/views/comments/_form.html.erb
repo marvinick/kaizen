@@ -5,14 +5,22 @@
     <%= f.hidden_field :score, required: true %>
     <div class="score"></div>
   </div>
-  <%= f.fields_for :tastes do |builder| %>
-  <fieldset>
-  <%= builder.label :content, "Taste " %><br/>
-  <%= builder.text_area :content %>
-  </fieldset>
-  <div class="score"></div>
-  <% end %>
-  <hr>
+      <%= f.fields_for :tastes do |builder| %>
+      <fieldset>
+      <%= builder.label :content, "Taste " %><br/>
+      <%= builder.text_area :content %>
+      </fieldset>
+      <div class="score"></div>
+      <% end %>
+
+      <%= f.fields_for :textures do |builder| %>
+      <fieldset>
+      <%= builder.label :content, "Texture " %><br/>
+      <%= builder.text_area :content %>
+      </fieldset>
+      <div class="score"></div>
+      <% end %>
+
   <div class="form-actions">
     <%= f.button :submit, class: "btn btn-primary" %>
   </div>

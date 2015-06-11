@@ -7,7 +7,6 @@ class Item < ActiveRecord::Base
   has_many :tastes, dependent: :destroy
   accepts_nested_attributes_for :tastes
 
-
   def average_rating
     comments.sum(:score) / comments.size
   rescue ZeroDivisionError
