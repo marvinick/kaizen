@@ -24,7 +24,7 @@ class TastesController < ApplicationController
   end
 
   def destroy
-     @taste.destroy
+    @taste.destroy
     redirect_to item_path(@taste.item), notice: "Taste was deleted"
 
   end
