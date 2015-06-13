@@ -21,11 +21,6 @@ class Item < ActiveRecord::Base
     0
   end
 
-  def average_rating_texture
-    tastes.sum(:score) / tastes.size
-  rescue ZeroDivisionError
-    0
-  end
 
   def self.search(search)
     if search

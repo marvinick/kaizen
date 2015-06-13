@@ -33,7 +33,7 @@
 </div>
 <div class="col-md-4">
   <%= pie_chart Comment.group(:score).count  %>
-  <p>Know how many items you have.<p>
+  <p>See how far you are in getting to your goal<p>
 </div>
 <div class="col-md-4">
   <%= bar_chart Comment.group(:score, :item_id).count  %>

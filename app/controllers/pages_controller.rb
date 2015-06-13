@@ -10,6 +10,6 @@ class PagesController < ApplicationController
   def dashboard
     @user = current_user
     @items = @user.items
-    @comments = @user.comments
+    @comments = @user.comments.limit(10).reverse
   end
 end
