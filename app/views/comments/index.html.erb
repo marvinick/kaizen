@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-md-4">
+    <% @comments.each do |comment| %>
+      <p><strong><%= comment.content %></strong> by <em><%= comment.user.name %></em></p>
+    <% end %>
+  </div>
+  <div class="col-md-8">
+    <%= column_chart Comment.group(:user_id).count %>
+    <p class="text-center">See who comments the most<p>
+  </div>
+</div>
