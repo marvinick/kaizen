@@ -10,8 +10,6 @@ class ItemsController < ApplicationController
   def show
     @comments = @item.comments.limit(5)
     @comment = Comment.new
-    @tastes = @item.tastes
-    @taste = Taste.new
   end
 
   def new
@@ -34,7 +32,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to item_path(@item)
+    redirect_to item_path(@items)
   end
 
   private
