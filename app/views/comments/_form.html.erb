@@ -8,7 +8,7 @@
     <%= f.input :aroma %>
     <%= f.input :portion %>
     <%= f.input :visual %><br/>
-    <%= f.input :content, label: false, placeholder: "write something here (optional)" %>
+    <%= f.input :content, label: false, placeholder: "comment here (optional)", required: false %>
     <%= f.hidden_field :item_id, required: true, value: @item.id %>
     <%= f.hidden_field :score, required: true %>
   </div>

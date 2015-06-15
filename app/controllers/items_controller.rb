@@ -8,9 +8,8 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @comments = @item.comments.limit(5)
+    @comments = @item.comments
     @comment = Comment.new
-    @improve = Improve.new
   end
 
   def new

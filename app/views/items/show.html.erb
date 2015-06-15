@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-md-3">
+  <div class="col-md-4">
     <h4><%= @item.name %></h3>
     <div class="average"></div>
     <h5>Gluten: <%= @item.gluten %></h4>
@@ -7,19 +7,20 @@
   <div class="col-md-4">
     <%= render "comments/form" %>
   </div>
-  <div class="col-md-5">
-    <h4>Comments</h4>
-    <%= render @comments %>
+  <div class="col-md-4">
+    <h4>Glance at the data</h4>
+    <%= column_chart @comments.group(:score, :item_id).count %>
   </div>
 </div>
 <hr>
 <div class="row">
-  <div class="col-md-7">
-    <h4>Glance at the data</h4>
-    <%= column_chart @comments.group(:score, :item_id).count %>
+  <div class="col-md-5">
+    <h4>Comments</h4>
+    <%= render @comments %>
   </div>
   <div class="col-md-5">
-    <div id="map-canvas" style="width: 400px; height: 300px;"></div>
+    <h4>Map</h4>
+    <div id="map-canvas" style="width: 300px; height: 300px;"></div>
   </div>
 </div>
 

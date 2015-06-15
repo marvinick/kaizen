@@ -1,13 +1,9 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_comment, only: [:edit, :update, :destroy]
+  before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   def index
     @comments = Comment.all.reverse
-  end
-
-  def edit
-    @item = @comment.item
   end
 
   def create
@@ -17,6 +13,12 @@ class CommentsController < ApplicationController
     else
       render :new, notice: "Something is wrong"
     end
+  end
+
+  def show; end
+
+  def edit
+    @item = @comment.item
   end
 
   def update
