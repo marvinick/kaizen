@@ -42,11 +42,11 @@
 
 <script type="text/javascript">
 <% @items.each do |item| %>
-    $(".average_<%= item.id %>").raty({
-    starOn: "<%= image_path('star-on.png')%>",
-    starOff: "<%= image_path('star-off.png') %>",
-    score: <%= item.total_average_rating %>,
-    readOnly: true
+  $(".average_<%= item.id %>").raty({
+  starOn: "<%= image_path('star-on.png')%>",
+  starOff: "<%= image_path('star-off.png') %>",
+  score: <%= item.total_average_rating %>,
+  readOnly: true
   });
-  <% end %>
+<% end %>
 </script>

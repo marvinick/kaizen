@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Kaizen</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
   <%= csrf_meta_tags %>
@@ -19,7 +19,7 @@
   </div>
 <% end %>
 <% if current_page?(root_path) %>
-  <div class="landing">
+  <div class="landin">
 <% else %>
   <div class="container">
   <% end %>
