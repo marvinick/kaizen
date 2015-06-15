@@ -39,6 +39,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:item_id, :user_id, :content, :score)
+    params.require(:comment).permit(:item_id, :user_id, :content, :score, :aroma, :texture, :portion, :flavor, :visual)
   end
 end

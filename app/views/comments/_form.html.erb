@@ -1,9 +1,16 @@
 <%= simple_form_for(@comment) do |f| %>
   <div class="form-inputs">
-    <%= f.input :content %>
+    <h4>Rate first</h4>
+    <div class="score"></div><br/>
+    <h4>And now tell us what can we improve upon</h4>
+    <%= f.input :flavor %>
+    <%= f.input :texture %>
+    <%= f.input :aroma %>
+    <%= f.input :portion %>
+    <%= f.input :visual %><br/>
+    <%= f.input :content, label: false, placeholder: "write something here (optional)" %>
     <%= f.hidden_field :item_id, required: true, value: @item.id %>
     <%= f.hidden_field :score, required: true %>
-    <div class="score"></div>
   </div>
   <br/>
   <div class="form-actions">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150615013654) do
+ActiveRecord::Schema.define(version: 20150615045608) do
 
   create_table "comments", force: true do |t|
     t.integer  "item_id"
@@ -20,6 +20,11 @@ ActiveRecord::Schema.define(version: 20150615013654) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.integer  "score",      default: 0
+    t.boolean  "flavor"
+    t.boolean  "texture"
+    t.boolean  "portion"
+    t.boolean  "aroma"
+    t.boolean  "visual"
   end
 
   create_table "improves", force: true do |t|

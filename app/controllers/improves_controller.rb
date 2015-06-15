@@ -1,6 +1,6 @@
 class ImprovesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_comment, only: [:edit, :update, :destroy]
+  before_action :set_improve, only: [:show, :edit, :update, :destroy]
 
   def index
     @improves = Improve.all.reverse
@@ -10,10 +10,14 @@ class ImprovesController < ApplicationController
     @improve = @improve.item
   end
 
+  def new
+    @improve = Improve.new
+  end
+
   def create
     @improve = current_user.improves.new(improve_params)
     if @improve.save
-      redirect_to item_path(@improve.item), notice: "Improvement was created"
+      redirect_to item_path, notice: "Improvement was created"
     else
       render :new, notice: "Something is wrong"
     end
@@ -26,6 +30,8 @@ class ImprovesController < ApplicationController
       render :new, notice: "Something is wrong"
     end
   end
+
+  def show; end
 
   def destroy
     @improve.destroy

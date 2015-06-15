@@ -10,6 +10,7 @@ class ItemsController < ApplicationController
   def show
     @comments = @item.comments.limit(5)
     @comment = Comment.new
+    @improve = Improve.new
   end
 
   def new

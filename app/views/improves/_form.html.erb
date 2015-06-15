@@ -1,6 +1,10 @@
 <%= simple_form_for(@improve) do |f| %>
   <div class="form-inputs">
-    <%= f.input :content %>
+    <%= f.input :flavor, as: :radio_buttons %>
+    <%= f.input :texture, as: :radio_buttons %>
+    <%= f.input :aroma, as: :radio_buttons %>
+    <%= f.input :portion, as: :radio_buttons %>
+    <%= f.input :visual, as: :radio_buttons %>
     <%= f.hidden_field :item_id, required: true, value: @item.id %>
     <%= f.hidden_field :score, required: true %>
     <div class="score"></div>
