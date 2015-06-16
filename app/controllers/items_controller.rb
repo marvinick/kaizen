@@ -16,8 +16,7 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @item = current_user.items.new(item_params)
@@ -32,7 +31,7 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    redirect_to item_path(@items)
+    redirect_to items
   end
 
   private

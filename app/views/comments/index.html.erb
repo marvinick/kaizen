@@ -2,6 +2,7 @@
   <div class="col-md-4">
     <% @comments.each do |comment| %>
       <p><strong><%= comment.content %></strong> by <em><%= comment.user.name %></em></p>
+      <p><strong><%= comment.aroma %></strong></p>
     <% end %>
   </div>
   <div class="col-md-8">

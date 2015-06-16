@@ -4,7 +4,6 @@ class Item < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode
   has_many :comments, dependent: :destroy
-  has_many :improves, dependent: :destroy
   has_attached_file :image
   has_attached_file :resource
 
