@@ -17,6 +17,7 @@ gem 'gravatarify', '~> 3.0.0'
 gem 'geocoder'
 gem "d3-rails"
 gem 'paperclip'
+gem 'aws-sdk'
 
 gem 'chartkick', '~> 1.2.4'
 gem 'groupdate', '~> 2.1.1'
