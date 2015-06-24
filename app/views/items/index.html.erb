@@ -36,9 +36,10 @@
   <p>See how far you are in getting to your goal<p>
 </div>
 <div class="col-md-4">
-  <%= bar_chart Comment.group(:score, :item_id).count  %>
+  <%= bar_chart Comment.group(:score, :item_id).count, Item.group(:name).count  %>
   <p>Monitor the received comments<p>
 </div>
+
 
 <script type="text/javascript">
 <% @items.each do |item| %>
