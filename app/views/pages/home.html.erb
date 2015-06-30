@@ -2,4 +2,8 @@
 <div class="text-center landing_title">
   <%= link_to "improve. one rate at a time.", items_path, class: "btn btn-alert btn-lg btn-landing" %>
 </div>
-
+<hr>
+<div class="col-md-12">
+  <%= column_chart Comment.group(:score, :item_id).count  %>
+  <center><h4>Quick look at at the performance of your items</h4></center>
+</div>
