@@ -4,6 +4,9 @@
   <%= f.input :name, required: true, autofocus: true, label: false, placeholder: "name", input_html: {class: "form-control"} %>
   <%= f.input :description, autofocus: true, label: false, placeholder: "description", input_html: {class: "form-control"} %>
   <%= f.input :address, autofocus: true, label: false, placeholder: "location", input_html: {class: "form-control"} %>
+  <%= f.input :image %>
+  <%= f.input :resource %>
+
   <%= f.input :gluten %>
   <%= f.button :submit, class: "btn btn-primary btn-block" %>
 <% end %>
