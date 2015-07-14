@@ -1,19 +1,12 @@
 class Item < ActiveRecord::Base
-  extend FriendlyId
-  friendly_id :name, use: :slugged
 
   belongs_to :user
   geocoded_by :address
   after_validation :geocode
   has_many :comments, dependent: :destroy
 
-
-  validates :image, attachment_presence: true
-  validates :resource, attachment_presence: true
-
-
-  has_attached_file :image
-  has_attached_file :resource
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 
   def average_rating
     comments.sum(:score) / comments.size
